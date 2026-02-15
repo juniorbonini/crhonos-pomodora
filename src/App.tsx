@@ -7,6 +7,9 @@ function App() {
       <Button size="md" variant="default">
         Login
       </Button>
+      <Button size="md" variant="outline">
+        Registrar
+      </Button>
     </>
   );
 }

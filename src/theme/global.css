@@ -1,0 +1,19 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "Roboto", system-ui, sans-serif;
+}
+
+body {
+  font-size: 1.6rem;
+  background: var(--bg-gradient);
+  color: var(--gray-300);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}

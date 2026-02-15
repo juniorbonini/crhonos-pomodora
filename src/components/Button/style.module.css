@@ -1,14 +1,22 @@
 .button {
   border: none;
-  background: green;
+  background: var(--green-500);
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 1.2rem;
-  border-radius: 0.7rem;
-  margin: 4.8rem 0;
+  border-radius: 0.8rem;
+  margin: 3.8rem 0;
   cursor: pointer;
+  color: var(--gray-200);
+  font-size: 1.8rem;
   transition: all 0.3s ease-in-out;
+}
+
+.outline {
+  border: none;
+  border: 0.2rem solid var(--green-500);
+  background: transparent;
 }
 
 .sm {
@@ -20,9 +28,11 @@
 }
 
 .button:hover {
+  background: var(--green-600);
 }
 
 .button:focus {
+  background: var(--green-700);
 }
 
 .button svg {
