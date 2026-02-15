@@ -1,0 +1,31 @@
+.button {
+  border: none;
+  background: green;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.2rem;
+  border-radius: 0.7rem;
+  margin: 4.8rem 0;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.sm {
+  padding: 1.2rem;
+}
+
+.md {
+  min-width: 24rem;
+}
+
+.button:hover {
+}
+
+.button:focus {
+}
+
+.button svg {
+  width: 2.4rem;
+  height: 2.4rem;
+}
