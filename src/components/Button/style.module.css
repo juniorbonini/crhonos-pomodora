@@ -1,4 +1,7 @@
 .button {
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
   border: none;
   background: var(--green-500);
   display: flex;
@@ -8,15 +11,21 @@
   border-radius: 0.8rem;
   margin: 3.8rem 0;
   cursor: pointer;
+  font-weight: bold;
   color: var(--gray-200);
   font-size: 1.8rem;
   transition: all 0.3s ease-in-out;
+}
+
+.danger {
+  background: var(--red-500);
 }
 
 .outline {
   border: none;
   border: 0.2rem solid var(--green-500);
   background: transparent;
+  color: var(--green-500);
 }
 
 .sm {
@@ -28,14 +37,11 @@
 }
 
 .button:hover {
-  background: var(--green-600);
-}
-
-.button:focus {
-  background: var(--green-700);
+  filter: brightness(70%);
 }
 
 .button svg {
   width: 2.4rem;
   height: 2.4rem;
+  color: var(--gray-900);
 }
