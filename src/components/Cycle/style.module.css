@@ -1,0 +1,25 @@
+.container {
+  display: flex;
+  gap: 1.1rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.cycle {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: var(--green-500);
+}
+
+.workTime {
+  background: var(--green-500);
+}
+
+.shortBreakTime {
+  background: var(--yellow-500);
+}
+
+.longBreakTime {
+  background: var(--blue-500);
+}
