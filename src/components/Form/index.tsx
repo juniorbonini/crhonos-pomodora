@@ -67,7 +67,11 @@ export function Form() {
         <TimerDisplay />
       </Container>
       <Container>
-        {state.cycles.length > 0 && <Cycles />}
+        {state.cycles.length > 0 && (
+          <div>
+            <Cycles />
+          </div>
+        )}
         <Tips />
       </Container>
       <Container>
