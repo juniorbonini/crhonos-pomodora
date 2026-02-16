@@ -5,8 +5,14 @@ import { MainTemplate } from "../../templates/Main";
 import { Button } from "../../components/Button";
 import { Container } from "../../components/Container";
 import { Heading } from "../../components/Heading";
+import { useCycleContext } from "../../context/CycleContext/cycle-context";
+import { formatDate } from "../../utils/formatDate/format-date";
+import { getCycleStatus } from "../../utils/cycleStatus/cycle-status";
+import { tr } from "date-fns/locale";
 
 export function History() {
+  const { state } = useCycleContext();
+  const cycleType = {};
   return (
     <MainTemplate>
       <Container>
@@ -31,34 +37,22 @@ export function History() {
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>Estudar</td>
-                <td>25 minutos</td>
-                <td>15/01/2026</td>
-                <td>Em andamento</td>
-                <td>Foco</td>
-              </tr>
-              <tr>
-                <td>Estudar</td>
-                <td>25 minutos</td>
-                <td>15/01/2026</td>
-                <td>Em andamento</td>
-                <td>Foco</td>
-              </tr>
-              <tr>
-                <td>Estudar</td>
-                <td>25 minutos</td>
-                <td>15/01/2026</td>
-                <td>Em andamento</td>
-                <td>Foco</td>
-              </tr>
-              <tr>
-                <td>Estudar</td>
-                <td>25 minutos</td>
-                <td>15/01/2026</td>
-                <td>Em andamento</td>
-                <td>Foco</td>
-              </tr>
+              {state.cycles.map((cycle) => {
+                const cycleType = {
+                  workTime: "Foco",
+                  shortBreakTime: "Descanso curto",
+                  longBreakTime: "Descanso longo",
+                };
+                return (
+                  <tr key={cycle.id}>
+                    <td>{cycle.name}</td>
+                    <td>{cycle.duration}</td>
+                    <td>{formatDate(cycle.startDate)}</td>
+                    <td>{getCycleStatus(cycle, state.activeCycle)}</td>
+                    <td>{cycleType[cycle.type]}</td>
+                  </tr>
+                );
+              })}
             </tbody>
           </table>
         </div>
