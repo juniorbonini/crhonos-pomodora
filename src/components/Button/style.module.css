@@ -1,7 +1,4 @@
 .button {
-  position: relative;
-  overflow: hidden;
-  display: inline-flex;
   border: none;
   background: var(--green-500);
   display: flex;
@@ -37,11 +34,11 @@
 }
 
 .button:hover {
-  filter: brightness(70%);
+  filter: brightness(65%);
 }
 
 .button svg {
-  width: 2.4rem;
-  height: 2.4rem;
+  width: 2.6rem;
+  height: 2.6rem;
   color: var(--gray-900);
 }

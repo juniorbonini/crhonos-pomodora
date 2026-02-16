@@ -13,7 +13,7 @@ export function Menu() {
     <>
       <div className={styles.container}>
         <TimerIcon />
-        <h1>Chronos Pomodora</h1>
+        <h1>Pomodora</h1>
       </div>
       <div className={styles.navContainer}>
         <Button size="sm" variant="default">

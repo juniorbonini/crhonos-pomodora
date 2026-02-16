@@ -1,4 +1,5 @@
 .container {
   font-size: clamp(6rem, 25vh, 16rem);
+  text-align: center;
   color: var(--gray-100);
 }
