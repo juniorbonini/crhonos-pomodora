@@ -28,7 +28,11 @@ export function Menu() {
         >
           <ClockClockwiseIcon />
         </Button>
-        <Button size="sm" variant="default">
+        <Button
+          size="sm"
+          variant="default"
+          onClick={() => navigate("/settings")}
+        >
           <GearIcon />
         </Button>
         <Button size="sm" variant="default">

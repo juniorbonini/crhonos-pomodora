@@ -7,13 +7,7 @@ export function Input({ id, label, type, ...props }: InputProps) {
       <label htmlFor={id} className={styles.label}>
         {label}
       </label>
-      <input
-        id={id}
-        type={type}
-        className={styles.input}
-        placeholder="Nome da tarefa"
-        {...props}
-      />
+      <input id={id} type={type} className={styles.input} {...props} />
     </div>
   );
 }
