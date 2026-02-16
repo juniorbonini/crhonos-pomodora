@@ -3,6 +3,7 @@ import { Container } from "../Container";
 import { Cycle } from "../Cycle";
 import { Input } from "../Input";
 import { TimerDisplay } from "../TimerDisplay";
+import { Tips } from "../Tips";
 
 export function Form() {
   return (
@@ -21,6 +22,7 @@ export function Form() {
       </Container>
       <Container>
         <Cycle />
+        <Tips />
       </Container>
       <Container>
         <Button>Iniciar</Button>

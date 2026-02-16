@@ -9,8 +9,27 @@ import {
 import { Button } from "../Button";
 import { useNavigate } from "react-router";
 import { Heading } from "../Heading";
+import { useEffect, useState } from "react";
+import type { ChangeTheme } from "../../types/ChangeTheme/change-theme";
 
 export function Menu() {
+  const [theme, setTheme] = useState<ChangeTheme>(() => {
+    const storage = localStorage.getItem("theme") as ChangeTheme;
+    return storage;
+  });
+
+  function onToggleTheme() {
+    setTheme((prev) => {
+      const next = prev === "light" ? "dark" : "light";
+      return next;
+    });
+  }
+
+  useEffect(() => {
+    document.documentElement.setAttribute("data-theme", theme);
+
+    localStorage.setItem("theme", theme);
+  }, [theme]);
   const navigate = useNavigate();
   return (
     <>
@@ -28,7 +47,7 @@ export function Menu() {
         <Button size="sm" onClick={() => navigate("/settings")}>
           <GearIcon />
         </Button>
-        <Button size="sm">
+        <Button size="sm" onClick={onToggleTheme}>
           <MoonIcon />
         </Button>
       </div>
