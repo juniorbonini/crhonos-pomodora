@@ -1,5 +1,6 @@
 import { Button } from "../../components/Button";
 import { Container } from "../../components/Container";
+import { Heading } from "../../components/Heading";
 import { Input } from "../../components/Input";
 import { MainTemplate } from "../../templates/Main";
 
@@ -7,7 +8,7 @@ export function Settings() {
   return (
     <MainTemplate>
       <Container>
-        <h1 style={{ textAlign: "center" }}>Configurações</h1>
+        <Heading>Configurações</Heading>
       </Container>
       <Container>
         <p style={{ textAlign: "center" }}>

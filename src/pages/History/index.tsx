@@ -4,13 +4,14 @@ import { TrashIcon } from "@phosphor-icons/react";
 import { MainTemplate } from "../../templates/Main";
 import { Button } from "../../components/Button";
 import { Container } from "../../components/Container";
+import { Heading } from "../../components/Heading";
 
 export function History() {
   return (
     <MainTemplate>
       <Container>
         <div className={styles.container}>
-          <h1>Histórico</h1>
+          <Heading>Histórico</Heading>
           <Button size="sm" variant="danger">
             <TrashIcon />
           </Button>

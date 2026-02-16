@@ -8,6 +8,7 @@ import {
 } from "@phosphor-icons/react";
 import { Button } from "../Button";
 import { useNavigate } from "react-router";
+import { Heading } from "../Heading";
 
 export function Menu() {
   const navigate = useNavigate();
@@ -15,7 +16,7 @@ export function Menu() {
     <>
       <div className={styles.container}>
         <TimerIcon />
-        <h1 style={{ fontSize: 48 }}>Pomodora</h1>
+        <Heading>Pomodora</Heading>
       </div>
       <div className={styles.navContainer}>
         <Button size="sm" onClick={() => navigate("/")}>
