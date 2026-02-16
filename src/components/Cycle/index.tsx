@@ -1,18 +1,25 @@
+import { useCycleContext } from "../../context/CycleContext/cycle-context";
+import { getNextCycleType } from "../../utils/getNextCycle/get-next-cycle-type";
+import { getNextCycle } from "../../utils/getNextCycle/get-next-cylcle";
 import styles from "./style.module.css";
 
-export function Cycle() {
+export function Cycles() {
+  const { state } = useCycleContext();
+  const cycleStep = Array.from({ length: state.currentCycle });
   return (
     <>
-      <p style={{ textAlign: "center", marginBottom: 20 }}>Ciclos:</p>
       <div className={styles.container}>
-        <div className={`${styles.cycle} ${styles.workTime}`}></div>
-        <div className={`${styles.cycle} ${styles.shortBreakTime}`}></div>
-        <div className={`${styles.cycle} ${styles.workTime}`}></div>
-        <div className={`${styles.cycle} ${styles.shortBreakTime}`}></div>
-        <div className={`${styles.cycle} ${styles.workTime}`}></div>
-        <div className={`${styles.cycle} ${styles.shortBreakTime}`}></div>
-        <div className={`${styles.cycle} ${styles.workTime}`}></div>
-        <div className={`${styles.cycle} ${styles.longBreakTime}`}></div>
+        {cycleStep.map((_, index) => {
+          const nextCycle = getNextCycle(index);
+          const cycleType = getNextCycleType(nextCycle);
+
+          return (
+            <span
+              key={nextCycle}
+              className={`${styles.cycle} ${styles[cycleType]}`}
+            ></span>
+          );
+        })}
       </div>
     </>
   );

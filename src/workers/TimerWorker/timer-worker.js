@@ -6,7 +6,7 @@ self.onmessage = function (event) {
   const endDate = activeCycle + secondsRemaining * 1000;
 
   function tick() {
-    const now = new Date.now();
+    const now = Date.now();
     const countDownSeconds = Math.floor((endDate - now) / 1000);
 
     self.postMessage(countDownSeconds);

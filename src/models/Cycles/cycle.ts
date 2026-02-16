@@ -7,5 +7,5 @@ export type Cycle = {
   startDate: number;
   completeDate: number | null;
   interruptDate: number | null;
-  type: CycleState["config"];
+  type: keyof CycleState["config"];
 };

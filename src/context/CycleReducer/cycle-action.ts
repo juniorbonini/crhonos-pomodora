@@ -2,17 +2,17 @@ import type { Cycle } from "../../models/Cycles/cycle";
 import type { CycleState } from "../../models/Cycles/cycle-state";
 
 export enum CycleActionTypes {
-  START_CYCLE = "START",
-  COMPLETE_CYCLE = "COMPLETE",
-  INTERRUPT_CYCLE = "INTERRUPT",
-  RESET_CYCLE = "RESET",
+  START = "START",
+  COMPLETE = "COMPLETE",
+  INTERRUPT = "INTERRUPT",
+  RESET = "RESET",
   COUNTDOWN = "COUNTDOWN",
-  CHANGE_SETTINGS = "CHANGE",
+  CHANGE = "CHANGE",
 }
 
 export type CycleActionWithPayload =
   | {
-      type: CycleActionTypes.START_CYCLE;
+      type: CycleActionTypes.START;
       payload: Cycle;
     }
   | {
@@ -20,19 +20,19 @@ export type CycleActionWithPayload =
       payload: { secondsRemaining: number };
     }
   | {
-      type: CycleActionTypes.CHANGE_SETTINGS;
+      type: CycleActionTypes.CHANGE;
       payload: CycleState["config"];
     };
 
 export type CycleActionWithoutPayload =
   | {
-      type: CycleActionTypes.COMPLETE_CYCLE;
+      type: CycleActionTypes.COMPLETE;
     }
   | {
-      type: CycleActionTypes.INTERRUPT_CYCLE;
+      type: CycleActionTypes.INTERRUPT;
     }
   | {
-      type: CycleActionTypes.RESET_CYCLE;
+      type: CycleActionTypes.RESET;
     };
 
 export type CycleActiontype =

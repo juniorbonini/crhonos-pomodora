@@ -33,7 +33,7 @@ export function CycleProvider({ children }: CycleContextProviderProps) {
         playBeepAudio.current();
         playBeepAudio.current = null;
       }
-      dispatch({ type: CycleActionTypes.COMPLETE_CYCLE });
+      dispatch({ type: CycleActionTypes.COMPLETE });
     } else {
       dispatch({
         type: CycleActionTypes.COUNTDOWN,

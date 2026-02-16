@@ -9,7 +9,7 @@ export function cycleReducer(
   action: CycleActiontype,
 ): CycleState {
   switch (action.type) {
-    case CycleActionTypes.START_CYCLE: {
+    case CycleActionTypes.START: {
       const newCycle = action.payload;
       const nextCycle = getNextCycle(state.currentCycle);
       const secondsRemaining = newCycle.duration * 60;
@@ -24,7 +24,7 @@ export function cycleReducer(
       };
     }
 
-    case CycleActionTypes.INTERRUPT_CYCLE: {
+    case CycleActionTypes.INTERRUPT: {
       return {
         ...state,
         activeCycle: null,
@@ -42,11 +42,11 @@ export function cycleReducer(
       };
     }
 
-    case CycleActionTypes.RESET_CYCLE: {
+    case CycleActionTypes.RESET: {
       return { ...cycleInitialState };
     }
 
-    case CycleActionTypes.CHANGE_SETTINGS: {
+    case CycleActionTypes.CHANGE: {
       return { ...state, config: { ...action.payload } };
     }
 
@@ -60,7 +60,7 @@ export function cycleReducer(
       };
     }
 
-    case CycleActionTypes.COMPLETE_CYCLE: {
+    case CycleActionTypes.COMPLETE: {
       return {
         ...state,
         activeCycle: null,
