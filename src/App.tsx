@@ -1,15 +1,9 @@
-import { Button } from "./components/Button";
+import { MainRoutes } from "./routes/main-routes";
 
 function App() {
   return (
     <>
-      <h1>Chronos Pomodora</h1>
-      <Button size="md" variant="default">
-        Login
-      </Button>
-      <Button size="md" variant="outline">
-        Registrar
-      </Button>
+      <MainRoutes />
     </>
   );
 }

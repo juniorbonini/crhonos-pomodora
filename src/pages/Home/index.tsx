@@ -1,9 +1,5 @@
-import { Menu } from "../../components/Menu";
+import { MainTemplate } from "../../templates/Main";
 
 export function Home() {
-  return (
-    <>
-      <Menu />
-    </>
-  );
+  return <MainTemplate />;
 }
