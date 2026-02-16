@@ -12,10 +12,9 @@ export function Notification({ children }: NotificationProps) {
         newestOnTop={true}
         closeOnClick={true}
         rtl={false}
-        pauseOnFocusLoss={false}
+        pauseOnFocusLoss
         draggable
         pauseOnHover
-        theme="dark"
         transition={Bounce}
       />
     </>

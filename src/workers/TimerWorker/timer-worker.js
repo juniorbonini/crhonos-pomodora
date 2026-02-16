@@ -6,8 +6,8 @@ self.onmessage = function (event) {
   isRunning = true;
 
   const state = event.data;
-  const { activeTask, secondsRemaining } = state;
-  const endDate = activeTask.startDate + secondsRemaining * 1000;
+  const { activeCycle, secondsRemaining } = state;
+  const endDate = activeCycle.startDate + secondsRemaining * 1000;
 
   function tick() {
     const now = Date.now();

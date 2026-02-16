@@ -1,5 +1,12 @@
+import { useCycleContext } from "../../context/CycleContext/cycle-context";
+import { Container } from "../Container";
 import styles from "./style.module.css";
 
 export function TimerDisplay() {
-  return <p className={styles.container}>00:00</p>;
+  const { state } = useCycleContext();
+  return (
+    <Container>
+      <p className={styles.container}>{state.formattedSecondsRemaining}</p>
+    </Container>
+  );
 }

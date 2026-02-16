@@ -4,13 +4,13 @@ import { Button } from "../Button";
 import { Container } from "../Container";
 import { Input } from "../Input";
 import { TimerDisplay } from "../TimerDisplay";
-import { Tips } from "../Tips";
 import { getNextCycle } from "../../utils/getNextCycle/get-next-cylcle";
 import { getNextCycleType } from "../../utils/getNextCycle/get-next-cycle-type";
 import { CycleActionTypes } from "../../context/CycleReducer/cycle-action";
 import { Cycles } from "../Cycle";
 import type { Cycle } from "../../models/Cycles/cycle";
 import { PlayCircleIcon, StopCircleIcon } from "@phosphor-icons/react";
+import { showNotification } from "../../models/Notifications/show-notification";
 
 export function Form() {
   const { state, dispatch } = useCycleContext();
@@ -26,7 +26,7 @@ export function Form() {
 
     const cycleName = inputValue.current.value;
     if (!cycleName) {
-      alert("Insira o nome da tarefa");
+      showNotification.warn("Insira um nome para o ciclo");
       return;
     }
 
@@ -41,12 +41,12 @@ export function Form() {
     };
 
     dispatch({ type: CycleActionTypes.START, payload: newCycle });
-    alert("Tarefa iniciada");
+    showNotification.success("Ciclo iniciado");
   }
 
   function handleInterrupt() {
     dispatch({ type: CycleActionTypes.INTERRUPT });
-    alert("Ciclo interrompido");
+    showNotification.error("Ciclo interrompido");
   }
 
   return (
@@ -72,7 +72,6 @@ export function Form() {
             <Cycles />
           </div>
         )}
-        <Tips />
       </Container>
       <Container>
         {!state.activeCycle && (
