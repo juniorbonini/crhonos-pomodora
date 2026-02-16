@@ -1,5 +1,19 @@
+import { Button } from "../../components/Button";
+import { Container } from "../../components/Container";
+import { Input } from "../../components/Input";
+import { TimerDisplay } from "../../components/TimerDisplay";
 import { MainTemplate } from "../../templates/Main";
 
 export function Home() {
-  return <MainTemplate />;
+  return (
+    <MainTemplate>
+      <Input label="Tarefa" id="task" placeholder="Task" />
+      <Container>
+        <TimerDisplay />
+      </Container>
+      <Container>
+        <Button>Salvar</Button>
+      </Container>
+    </MainTemplate>
+  );
 }

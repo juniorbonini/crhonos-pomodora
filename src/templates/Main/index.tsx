@@ -1,28 +1,17 @@
-import { FloppyDiskBackIcon } from "@phosphor-icons/react";
-import { Button } from "../../components/Button";
 import { Container } from "../../components/Container";
-import { Cycle } from "../../components/Cycle";
-import { Input } from "../../components/Input";
 import { Menu } from "../../components/Menu";
-import { TimerDisplay } from "../../components/TimerDisplay";
+import { Footer } from "../../components/Footer";
+import type { MainTemplateProps } from "../../types/Main/main-template";
 
-export function MainTemplate() {
+export function MainTemplate({ children }: MainTemplateProps) {
   return (
     <>
       <Container>
         <Menu />
       </Container>
+      {children}
       <Container>
-        <Input id="task" label="Tarefa" type="text" placeholder="Task" />
-      </Container>
-      <Container>
-        <TimerDisplay />
-      </Container>
-      <Container>
-        <Cycle />
-        <Button size="md">
-          <FloppyDiskBackIcon />
-        </Button>
+        <Footer />
       </Container>
     </>
   );

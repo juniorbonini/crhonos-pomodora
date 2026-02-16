@@ -7,8 +7,10 @@ import {
   TimerIcon,
 } from "@phosphor-icons/react";
 import { Button } from "../Button";
+import { useNavigate } from "react-router";
 
 export function Menu() {
+  const navigate = useNavigate();
   return (
     <>
       <div className={styles.container}>
@@ -16,10 +18,14 @@ export function Menu() {
         <h1>Pomodora</h1>
       </div>
       <div className={styles.navContainer}>
-        <Button size="sm" variant="default">
+        <Button size="sm" variant="default" onClick={() => navigate("/")}>
           <HouseIcon />
         </Button>
-        <Button size="sm" variant="default">
+        <Button
+          size="sm"
+          variant="default"
+          onClick={() => navigate("/history")}
+        >
           <ClockClockwiseIcon />
         </Button>
         <Button size="sm" variant="default">
