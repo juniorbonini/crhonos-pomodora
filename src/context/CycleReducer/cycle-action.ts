@@ -17,7 +17,7 @@ export type CycleActionWithPayload =
     }
   | {
       type: CycleActionTypes.COUNTDOWN;
-      payload: { secondsReamaining: number };
+      payload: { secondsRemaining: number };
     }
   | {
       type: CycleActionTypes.CHANGE_SETTINGS;
