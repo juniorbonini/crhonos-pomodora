@@ -4,6 +4,7 @@ let instance: TimerWorkerManager | null = null;
 
 export class TimerWorkerManager {
   private worker: Worker;
+
   private constructor() {
     this.worker = new Worker(
       new URL("../TimerWorker/timer-worker.js", import.meta.url),
@@ -14,6 +15,7 @@ export class TimerWorkerManager {
     if (!instance) {
       instance = new TimerWorkerManager();
     }
+
     return instance;
   }
 
