@@ -37,6 +37,6 @@
   transition: all 0.3s ease-in-out;
 }
 
-.thShort {
-  filter: brightness(65%);
+.thShort:focus {
+  filter: brightness(50%);
 }

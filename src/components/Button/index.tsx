@@ -4,7 +4,7 @@ import type { ButtonProps } from "../../types/Button/button";
 export function Button({
   children,
   size = "md",
-  variant,
+  variant = "default",
   onClick,
 }: ButtonProps) {
   return (

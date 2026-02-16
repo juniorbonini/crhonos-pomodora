@@ -15,27 +15,19 @@ export function Menu() {
     <>
       <div className={styles.container}>
         <TimerIcon />
-        <h1>Pomodora</h1>
+        <h1 style={{ fontSize: 48 }}>Pomodora</h1>
       </div>
       <div className={styles.navContainer}>
-        <Button size="sm" variant="default" onClick={() => navigate("/")}>
+        <Button size="sm" onClick={() => navigate("/")}>
           <HouseIcon />
         </Button>
-        <Button
-          size="sm"
-          variant="default"
-          onClick={() => navigate("/history")}
-        >
+        <Button size="sm" onClick={() => navigate("/history")}>
           <ClockClockwiseIcon />
         </Button>
-        <Button
-          size="sm"
-          variant="default"
-          onClick={() => navigate("/settings")}
-        >
+        <Button size="sm" onClick={() => navigate("/settings")}>
           <GearIcon />
         </Button>
-        <Button size="sm" variant="default">
+        <Button size="sm">
           <MoonIcon />
         </Button>
       </div>

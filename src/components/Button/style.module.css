@@ -5,7 +5,6 @@
 
 .button {
   border: none;
-  background: var(--green-500);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -21,6 +20,10 @@
 
 .danger {
   background: var(--red-500);
+}
+
+.default {
+  background: var(--green-500);
 }
 
 .outline {
