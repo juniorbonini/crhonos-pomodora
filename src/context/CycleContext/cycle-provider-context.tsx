@@ -9,6 +9,6 @@ export function CycleProvider({ children }: CycleContextProviderProps) {
 
   })
   return <CycleContext.Provider value={{
-
+      
   }}>{children}</CycleContext.Provider>;
 }
