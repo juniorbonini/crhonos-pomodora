@@ -9,17 +9,16 @@
   width: 2rem;
   height: 2rem;
   border-radius: 50%;
-  background: var(--green-500);
 }
 
 .workTime {
-  background: var(--green-500);
+  background: var(--green-600);
 }
 
 .shortBreakTime {
-  background: var(--yellow-500);
+  background: var(--yellow-600);
 }
 
 .longBreakTime {
-  background: var(--blue-500);
+  background: var(--blue-600);
 }

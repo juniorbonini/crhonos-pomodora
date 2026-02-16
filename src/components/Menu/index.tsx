@@ -4,6 +4,7 @@ import {
   GearIcon,
   HouseIcon,
   MoonIcon,
+  SunHorizonIcon,
   TimerIcon,
 } from "@phosphor-icons/react";
 import { Button } from "../Button";
@@ -17,6 +18,10 @@ export function Menu() {
     const storage = localStorage.getItem("theme") as ChangeTheme;
     return storage;
   });
+  const nextIcon = {
+    dark: <SunHorizonIcon />,
+    light: <MoonIcon />,
+  };
 
   function onToggleTheme() {
     setTheme((prev) => {
@@ -48,7 +53,7 @@ export function Menu() {
           <GearIcon />
         </Button>
         <Button size="sm" onClick={onToggleTheme}>
-          <MoonIcon />
+          {nextIcon[theme]}
         </Button>
       </div>
     </>
