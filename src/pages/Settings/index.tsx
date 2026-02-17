@@ -77,7 +77,7 @@ export function Settings() {
           />
         </div>
         <Container>
-          <Button>Salvar</Button>
+          <Button variant="default">Salvar</Button>
         </Container>
       </form>
     </MainTemplate>

@@ -13,7 +13,7 @@
   margin: 3.8rem 0;
   cursor: pointer;
   font-weight: bold;
-  color: var(--gray-200);
+  color: var(--gray-900);
   font-size: 1.8rem;
   transition: all 0.3s ease-in-out;
 }
@@ -42,7 +42,7 @@
 }
 
 .button:hover {
-  filter: brightness(65%);
+  filter: brightness(75%);
 }
 
 .button svg {
