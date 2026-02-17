@@ -10,16 +10,30 @@ export function cycleReducer(
 ): CycleState {
   switch (action.type) {
     case CycleActionTypes.START: {
-      const newCycle = action.payload;
+      const payload = action.payload;
       const nextCycle = getNextCycle(state.currentCycle);
-      const secondsRemaining = newCycle.duration * 60;
+      const secondsRemaining = payload.duration * 60;
+
+      const isBreakCycle =
+        payload.type === "shortBreakTime" || payload.type === "longBreakTime";
+
+      const cycleName = isBreakCycle
+        ? payload.type === "shortBreakTime"
+          ? "Descanso curto"
+          : "Descanso longo"
+        : payload.name;
+
+      const newCycle = {
+        ...payload,
+        name: cycleName,
+      };
 
       return {
         ...state,
-        activeCycle: newCycle,
-        currentCycle: nextCycle,
         secondsRemaining,
         formattedSecondsRemaining: formatSecondsToMinutes(secondsRemaining),
+        activeCycle: newCycle,
+        currentCycle: nextCycle,
         cycles: [...state.cycles, newCycle],
       };
     }
