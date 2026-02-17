@@ -14,9 +14,18 @@ export function cycleReducer(
       const nextCycle = getNextCycle(state.currentCycle);
       const secondsRemaining = payload.duration * 60;
 
+      const isBreakCycle =
+        payload.type === "shortBreakTime" || payload.type === "longBreakTime";
+
+      const cycleName = isBreakCycle
+        ? payload.type === "shortBreakTime"
+          ? "Descanso curto"
+          : "Descanso longo"
+        : payload.name;
+
       const newCycle = {
         ...payload,
-        name: payload.name,
+        name: cycleName,
       };
 
       return {
