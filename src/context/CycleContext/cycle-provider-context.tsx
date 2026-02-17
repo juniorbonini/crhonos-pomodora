@@ -48,7 +48,7 @@ export function CycleProvider({ children }: CycleContextProviderProps) {
     if (!state.activeCycle) {
       worker.terminate();
     }
-    document.title = `${state.formattedSecondsRemaining} - Chronos Pomodora`;
+    document.title = `${state.formattedSecondsRemaining} - ${state.activeCycle?.name || "Chronos Pomodora"}`;
     worker.postMessage(state);
   }, [state, worker]);
 
