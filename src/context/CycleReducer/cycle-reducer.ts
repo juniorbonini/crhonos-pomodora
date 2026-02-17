@@ -1,5 +1,6 @@
 import { cycleInitialState } from "../../models/Cycles/cycle-initial-state";
 import type { CycleState } from "../../models/Cycles/cycle-state";
+import { showNotification } from "../../models/Notifications/show-notification";
 import { formatSecondsToMinutes } from "../../utils/formatSeconds/format-seconds";
 import { getNextCycle } from "../../utils/getNextCycle/get-next-cylcle";
 import { CycleActionTypes, type CycleActiontype } from "./cycle-action";

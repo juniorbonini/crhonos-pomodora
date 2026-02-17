@@ -65,8 +65,16 @@ export function History() {
 
   function handleResetHistory() {
     showNotification.dimiss();
-    showNotification.confirm("Tem certeza?", (confirmation) =>
-      setConfirmClearHistory(confirmation),
+
+    if (state.activeCycle !== null) {
+      showNotification.warning(
+        "Você não pode resetar o histórico quando há um ciclo ativo, termine o ciclo ou interrompa antes.",
+      );
+      return;
+    }
+    showNotification.confirm(
+      "Você tem certeza que quer resetar o histórico?",
+      (confirmation) => setConfirmClearHistory(confirmation),
     );
   }
   return (
