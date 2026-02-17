@@ -9,7 +9,7 @@ import { CycleActionTypes } from "../../context/CycleReducer/cycle-action";
 import { showNotification } from "../../models/Notifications/show-notification";
 
 export function Settings() {
-  const { dispatch } = useCycleContext();
+  const { state, dispatch } = useCycleContext();
   const inputWorkTime = useRef(null);
   const inputshortBreakTime = useRef(null);
   const inputLongBreakTime = useRef(null);
@@ -19,6 +19,13 @@ export function Settings() {
     const workTime = Number(inputWorkTime.current?.value);
     const shortBreakTime = Number(inputshortBreakTime.current?.value);
     const longBreakTime = Number(inputLongBreakTime.current?.value);
+
+    if (state.activeCycle !== null) {
+      showNotification.warning(
+        "Não pode alterar configurações com um ciclo ativo, termine ou interrompa o ciclo",
+      );
+      return;
+    }
 
     dispatch({
       type: CycleActionTypes.CHANGE,

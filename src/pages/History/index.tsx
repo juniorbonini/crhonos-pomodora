@@ -68,7 +68,7 @@ export function History() {
 
     if (state.activeCycle !== null) {
       showNotification.warning(
-        "Você não pode resetar o histórico quando há um ciclo ativo, termine o ciclo ou interrompa antes.",
+        "Você não pode resetar o histórico quando há um ciclo ativo, termine ou interrompa o ciclo",
       );
       return;
     }
