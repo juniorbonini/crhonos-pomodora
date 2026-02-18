@@ -4,38 +4,18 @@ import {
   GearIcon,
   HouseIcon,
   MoonIcon,
-  SunHorizonIcon,
+  SunIcon,
   TimerIcon,
 } from "@phosphor-icons/react";
 import { Button } from "../Button";
 import { useNavigate } from "react-router";
 import { Heading } from "../Heading";
-import { useEffect, useState } from "react";
-import type { ChangeTheme } from "../../types/ChangeTheme/change-theme";
+import { useThemeContext } from "../../context/ThemeContext/theme-context";
 
 export function Menu() {
-  const [theme, setTheme] = useState<ChangeTheme>(() => {
-    const storage = localStorage.getItem("theme") as ChangeTheme;
-    return storage;
-  });
-  const nextIcon = {
-    dark: <SunHorizonIcon />,
-    light: <MoonIcon />,
-  };
-
-  function onToggleTheme() {
-    setTheme((prev) => {
-      const next = prev === "light" ? "dark" : "light";
-      return next;
-    });
-  }
-
-  useEffect(() => {
-    document.documentElement.setAttribute("data-theme", theme);
-
-    localStorage.setItem("theme", theme);
-  }, [theme]);
+  const { onToggleTheme, theme } = useThemeContext();
   const navigate = useNavigate();
+
   return (
     <>
       <div className={styles.container}>
@@ -53,7 +33,7 @@ export function Menu() {
           <GearIcon />
         </Button>
         <Button size="sm" onClick={onToggleTheme}>
-          {nextIcon[theme]}
+          {theme === "dark" ? <SunIcon /> : <MoonIcon />}
         </Button>
       </div>
     </>

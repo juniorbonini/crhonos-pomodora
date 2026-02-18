@@ -18,11 +18,11 @@ import { Badge } from "../../components/Badge";
 import { CycleCard } from "../../components/CycleCard";
 import { getCycleType } from "../../utils/cycleType/cycle-type";
 import { FlatList } from "../../components/FlatList";
+import { EmptyComponent } from "../../components/EmptyComponent";
 
 export function History() {
   const { state, dispatch } = useCycleContext();
   const [confirmClearHistory, setConfirmClearHistory] = useState(false);
-  const hasCycles = state.cycles.length > 0;
   const [sortCycleOptions, setSortCycleOptions] = useState<SortCycleProps>(
     () => {
       return {
@@ -113,7 +113,9 @@ export function History() {
       </Container>
 
       <Container>
-        {hasCycles ? (
+        {state.cycles.length === 0 ? (
+          <EmptyComponent />
+        ) : (
           <FlatList
             data={sortCycleOptions.cycles}
             keyExtractor={(cycle) => cycle.id}
@@ -129,10 +131,6 @@ export function History() {
               </div>
             )}
           />
-        ) : (
-          <div>
-            <Heading>Não há ciclos registrados</Heading>
-          </div>
         )}
       </Container>
     </MainTemplate>

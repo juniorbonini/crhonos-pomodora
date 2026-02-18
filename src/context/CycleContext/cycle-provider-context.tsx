@@ -43,6 +43,10 @@ export function CycleProvider({ children }: CycleContextProviderProps) {
   });
 
   useEffect(() => {
+    
+  }, [])
+
+  useEffect(() => {
     localStorage.setItem("cycle", JSON.stringify(state));
 
     if (!state.activeCycle) {
