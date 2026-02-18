@@ -16,6 +16,8 @@ import { CycleActionTypes } from "../../context/CycleReducer/cycle-action";
 import { showNotification } from "../../models/Notifications/show-notification";
 import { Badge } from "../../components/Badge";
 import { CycleCard } from "../../components/CycleCard";
+import { getCycleType } from "../../utils/cycleType/cycle-type";
+import { FlatList } from "../../components/FlatList";
 
 export function History() {
   const { state, dispatch } = useCycleContext();
@@ -112,30 +114,21 @@ export function History() {
 
       <Container>
         {hasCycles ? (
-          <div className={styles.table}>
-            <table>
-              <tbody>
-                {sortCycleOptions.cycles.map((cycle) => {
-                  const cycleType = {
-                    workTime: "Foco",
-                    shortBreakTime: "Descanso curto",
-                    longBreakTime: "Descanso longo",
-                  };
-                  return (
-                    <div className={styles.cycleCard}>
-                      <CycleCard
-                        name={cycle.name}
-                        startDate={formatDate(cycle.startDate)}
-                        duration={cycle.duration}
-                        type={cycleType[cycle.type]}
-                        status={getCycleStatus(cycle, state.activeCycle)}
-                      />
-                    </div>
-                  );
-                })}
-              </tbody>
-            </table>
-          </div>
+          <FlatList
+            data={sortCycleOptions.cycles}
+            keyExtractor={(cycle) => cycle.id}
+            renderItem={(cycle) => (
+              <div className={styles.flatLisContent}>
+                <CycleCard
+                  name={cycle.name}
+                  duration={cycle.duration}
+                  startDate={formatDate(cycle.startDate)}
+                  status={getCycleStatus(cycle, state.activeCycle)}
+                  type={getCycleType(cycle.type)}
+                />
+              </div>
+            )}
+          />
         ) : (
           <div>
             <Heading>Não há ciclos registrados</Heading>

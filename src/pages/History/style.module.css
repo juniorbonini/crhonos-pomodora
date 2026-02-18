@@ -10,39 +10,9 @@
   gap: 1.6rem;
 }
 
-.table tbody {
+.flatLisContent {
   display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-.table {
-  border-radius: 0.8rem;
-  overflow-x: auto;
-}
-
-.table table {
   width: 100%;
-  min-width: 6.4rem;
-  font-size: 1.6rem;
-  border-collapse: collapse;
-}
-
-.table td {
-  background-color: var(--gray-800);
-}
-
-.table th,
-.table td {
-  border-bottom: 0.2rem solid var(--gray-700);
-  text-align: center;
-  padding: 1.6rem;
-}
-
-.thSort {
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
-}
-
-.thShort:focus {
-  filter: brightness(50%);
+  flex-direction: column;
+  padding: 1rem;
 }

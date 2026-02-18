@@ -14,6 +14,7 @@ body {
   font-size: 1.6rem;
   background: var(--bg-gradient);
   min-height: 100vh;
+  padding: 0 2rem;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }

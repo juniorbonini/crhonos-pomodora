@@ -4,6 +4,5 @@ export function getCycleStatus(cycle: Cycle, activeCycle: Cycle | null) {
   if (cycle.completeDate) return "Concluído";
   if (cycle.interruptDate) return "Interrompido";
   if (cycle.id === activeCycle?.id) return "Em andamento";
-
-  return "Abandonado";
+  return undefined;
 }

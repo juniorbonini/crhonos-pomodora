@@ -3,5 +3,5 @@ export type CycleCardProps = {
   startDate: string;
   duration: number;
   type: string;
-  status: "Em andamento" | "Concluído" | "Interrompido" | "Abandonado";
+  status: "Em andamento" | "Concluído" | "Interrompido" | undefined;
 };
