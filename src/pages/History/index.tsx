@@ -15,6 +15,7 @@ import { sortCycles } from "../../utils/sortCycle/sort-cycle";
 import { CycleActionTypes } from "../../context/CycleReducer/cycle-action";
 import { showNotification } from "../../models/Notifications/show-notification";
 import { Badge } from "../../components/Badge";
+import { CycleCard } from "../../components/CycleCard";
 
 export function History() {
   const { state, dispatch } = useCycleContext();
@@ -121,13 +122,15 @@ export function History() {
                     longBreakTime: "Descanso longo",
                   };
                   return (
-                    <tr key={cycle.id}>
-                      <td>{cycle.name}</td>
-                      <td>{cycle.duration}</td>
-                      <td>{formatDate(cycle.startDate)}</td>
-                      <td>{getCycleStatus(cycle, state.activeCycle)}</td>
-                      <td>{cycleType[cycle.type]}</td>
-                    </tr>
+                    <div className={styles.cycleCard}>
+                      <CycleCard
+                        name={cycle.name}
+                        startDate={formatDate(cycle.startDate)}
+                        duration={cycle.duration}
+                        type={cycleType[cycle.type]}
+                        status={getCycleStatus(cycle, state.activeCycle)}
+                      />
+                    </div>
                   );
                 })}
               </tbody>

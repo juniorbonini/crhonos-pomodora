@@ -19,8 +19,8 @@ export function cycleReducer(
 
       const cycleName = isBreakCycle
         ? payload.type === "shortBreakTime"
-          ? "Descanso"
-          : "Descanso longo"
+          ? "Ciclo de descanso curto"
+          : "Ciclo de descanso longo"
         : payload.name;
 
       const newCycle = {

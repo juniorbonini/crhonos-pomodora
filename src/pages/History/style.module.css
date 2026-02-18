@@ -10,10 +10,11 @@
   gap: 1.6rem;
 }
 
-.status {
-  
+.table tbody {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
-
 .table {
   border-radius: 0.8rem;
   overflow-x: auto;
