@@ -10,9 +10,9 @@ import { showNotification } from "../../models/Notifications/show-notification";
 
 export function Settings() {
   const { state, dispatch } = useCycleContext();
-  const inputWorkTime = useRef(null);
-  const inputshortBreakTime = useRef(null);
-  const inputLongBreakTime = useRef(null);
+  const inputWorkTime = useRef<HTMLInputElement>(null);
+  const inputshortBreakTime = useRef<HTMLInputElement>(null);
+  const inputLongBreakTime = useRef<HTMLInputElement>(null);
 
   function handleSaveChanges(e: ChangeEvent<HTMLFormElement>) {
     e.preventDefault();

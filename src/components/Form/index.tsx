@@ -14,7 +14,7 @@ import { showNotification } from "../../models/Notifications/show-notification";
 
 export function Form() {
   const { state, dispatch } = useCycleContext();
-  const inputValue = useRef(null);
+  const inputValue = useRef<HTMLInputElement>(null);
   const nextCycle = getNextCycle(state.currentCycle);
   const getCycleType = getNextCycleType(nextCycle);
   const lastCycleName = state.cycles[state.cycles.length - 1]?.name || "";

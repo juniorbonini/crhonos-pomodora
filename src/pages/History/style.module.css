@@ -5,6 +5,15 @@
   justify-content: center;
 }
 
+.badgeContainer {
+  display: flex;
+  gap: 1.6rem;
+}
+
+.status {
+  
+}
+
 .table {
   border-radius: 0.8rem;
   overflow-x: auto;
@@ -15,10 +24,6 @@
   min-width: 6.4rem;
   font-size: 1.6rem;
   border-collapse: collapse;
-}
-
-.table th {
-  background-color: var(--gray-600);
 }
 
 .table td {

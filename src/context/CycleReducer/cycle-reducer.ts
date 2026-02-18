@@ -19,7 +19,7 @@ export function cycleReducer(
 
       const cycleName = isBreakCycle
         ? payload.type === "shortBreakTime"
-          ? "Descanso curto"
+          ? "Descanso"
           : "Descanso longo"
         : payload.name;
 

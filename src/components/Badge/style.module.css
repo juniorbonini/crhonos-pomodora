@@ -1,0 +1,17 @@
+.badge {
+  background-color: transparent;
+  color: var(--gray-200);
+  border: 0.2rem solid var(--gray-500);
+  border-radius: 0.675rem;
+  width: 20rem;
+  padding: 0.875rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.badge:focus {
+  border: none;
+  background-color: var(--green-500);
+  color: var(--gray-900);
+  box-shadow: 0 0 0 0.2rem var(--gray-800);
+}

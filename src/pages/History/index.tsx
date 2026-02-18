@@ -14,6 +14,7 @@ import type { SortCycleProps } from "../../types/SortCycle/sort-cycle";
 import { sortCycles } from "../../utils/sortCycle/sort-cycle";
 import { CycleActionTypes } from "../../context/CycleReducer/cycle-action";
 import { showNotification } from "../../models/Notifications/show-notification";
+import { Badge } from "../../components/Badge";
 
 export function History() {
   const { state, dispatch } = useCycleContext();
@@ -89,33 +90,29 @@ export function History() {
       </Container>
 
       <Container>
+        <div className={styles.badgeContainer}>
+          <Badge onClick={() => handleSortCycle({ field: "name" })}>
+            <p>Tarefa</p>
+          </Badge>
+          <Badge onClick={() => handleSortCycle({ field: "duration" })}>
+            <p>Duração</p>
+          </Badge>
+          <Badge onClick={() => handleSortCycle({ field: "startDate" })}>
+            <p>Data</p>
+          </Badge>
+          <Badge>
+            <p>Status</p>
+          </Badge>
+          <Badge onClick={() => handleSortCycle({ field: "type" })}>
+            <p>Tipo</p>
+          </Badge>
+        </div>
+      </Container>
+
+      <Container>
         {hasCycles ? (
           <div className={styles.table}>
             <table>
-              <thead>
-                <tr>
-                  <th
-                    className={styles.thSort}
-                    onClick={() => handleSortCycle({ field: "name" })}
-                  >
-                    Tarefa ↕
-                  </th>
-                  <th
-                    className={styles.thSort}
-                    onClick={() => handleSortCycle({ field: "duration" })}
-                  >
-                    Duração ↕
-                  </th>
-                  <th
-                    className={styles.thSort}
-                    onClick={() => handleSortCycle({ field: "startDate" })}
-                  >
-                    Data ↕
-                  </th>
-                  <th className={styles.thSort}>Status</th>
-                  <th className={styles.thSort}>Tipo</th>
-                </tr>
-              </thead>
               <tbody>
                 {sortCycleOptions.cycles.map((cycle) => {
                   const cycleType = {
